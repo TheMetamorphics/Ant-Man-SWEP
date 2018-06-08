@@ -10,7 +10,14 @@ include ("shared.lua")
 
 function SWEP:PrimaryAttack()
 
-  self:ShootSize(self:GetGrowTargetSize(), 0.2)
+  self:ShootSize(self:GetShrinkTargetSize(), 0.2)
+  self:SetNextSecondaryFire(CurTime() + 0.5)
+
+end
+
+function SWEP:SecondaryAttack()
+
+  self:ShootSize(1, 0.2)
   self:SetNextSecondaryFire(CurTime() + 0.5)
 
 end

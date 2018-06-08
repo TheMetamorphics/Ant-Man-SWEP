@@ -1,6 +1,6 @@
 /*
-	Created by: Metamorphics
-	STEAM_1:1:52851671
+  Created by: Metamorphics
+  STEAM_1:1:52851671
 */
 
 SWEP.Category = "The Ant-Man SWEP"
