@@ -12,17 +12,3 @@ function SWEP:DrawHUD()
   draw.WordBox(8, 8, 40, "Target Size: " .. math.Round(self:GetShrinkTargetSize(), 2), "Default", Color(255, 0, 0, 50), Color(255, 0, 0))
 
 end
-
-function SWEP:PrimaryAttack()
-
-  self:ShootLaserEffects()
-  self:SetNextPrimaryFire(CurTime() + 0.5)
-
-end
-
-function SWEP:SecondaryAttack()
-
-  self:ShootLaserEffects()
-  self:SetNextSecondaryFire(CurTime() + 0.5)
-  
-end

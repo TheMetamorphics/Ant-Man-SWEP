@@ -40,6 +40,14 @@ SWEP.WElements = {
   ["test2"] = { type = "Model", model = "models/items/battery.mdl", bone = "ValveBiped.Anim_Attachment_RH", rel = "test", pos = Vector(0, 0, -12.988), angle = Angle(0, -90, 0), size = Vector(0.69, 0.69, 0.69), color = Color(0, 0, 255, 255), surpresslightning = false, material = "", skin = 0, bodygroup = {} }
 }
 
+function SWEP:PrimaryAttack()
+
+  self:ShootLaserEffects()
+  self:ShootSize(self:GetGrowTargetSize(), 0.2)
+  self:SetNextSecondaryFire(CurTime() + 0.5)
+
+end
+
 function SWEP:Initialize()
 
   self:SetSizeMode(self.SizeMode)

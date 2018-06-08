@@ -40,3 +40,19 @@ function SWEP:Initialize()
   self:SetShrinkTargetSize(1)
 
 end
+
+function SWEP:PrimaryAttack()
+
+  self:ShootLaserEffects()
+  self:ShootSize(self:GetShrinkTargetSize(), 0.2)
+  self:SetNextSecondaryFire(CurTime() + 0.5)
+
+end
+
+function SWEP:SecondaryAttack()
+
+  self:ShootLaserEffects()
+  self:ShootSize(1, 0.2)
+  self:SetNextSecondaryFire(CurTime() + 0.5)
+
+end

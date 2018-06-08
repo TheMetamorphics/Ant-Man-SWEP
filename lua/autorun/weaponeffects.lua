@@ -7,14 +7,15 @@ local swep = FindMetaTable("Weapon")
 
 function swep:ShootLaserEffects()
 
-  local tr = self.Owner:GetEyeTrace()
+  local Owner = self.Owner
+  local tr = Owner:GetEyeTrace()
   local fx = EffectData()
 
   fx:SetEntity(self)
   fx:SetStart(Owner:GetShootPos())
   fx:SetOrigin(tr.HitPos)
   fx:SetAttachment(1)
-  
+
   util.Effect("tooltracer", fx)
 
 end
