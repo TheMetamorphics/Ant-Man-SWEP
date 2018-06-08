@@ -43,16 +43,22 @@ end
 
 function SWEP:PrimaryAttack()
 
+  if SERVER then
+    self:ShootSize(self:GetShrinkTargetSize(), 0.2)
+  end
+
   self:ShootLaserEffects()
-  self:ShootSize(self:GetShrinkTargetSize(), 0.2)
   self:SetNextSecondaryFire(CurTime() + 0.5)
 
 end
 
 function SWEP:SecondaryAttack()
 
+  if SERVER then
+    self:ShootSize(1, 0.2)
+  end
+
   self:ShootLaserEffects()
-  self:ShootSize(1, 0.2)
   self:SetNextSecondaryFire(CurTime() + 0.5)
 
 end

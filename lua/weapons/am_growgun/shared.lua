@@ -42,8 +42,11 @@ SWEP.WElements = {
 
 function SWEP:PrimaryAttack()
 
+  if SERVER then
+    self:ShootSize(self:GetGrowTargetSize(), 0.2)
+  end
+
   self:ShootLaserEffects()
-  self:ShootSize(self:GetGrowTargetSize(), 0.2)
   self:SetNextSecondaryFire(CurTime() + 0.5)
 
 end
